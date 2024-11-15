@@ -1,0 +1,11 @@
+---
+- name: Install VS Code
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Download binary
+      ansible.builtin.apt:
+        deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+        state: present
+        update_cache: true
